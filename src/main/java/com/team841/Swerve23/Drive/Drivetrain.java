@@ -6,7 +6,5 @@ public class Drivetrain extends SubsystemBase {
   public Drivetrain() {}
 
   @Override
-  public void periodic() {
-    
-  }
+  public void periodic() {}
 }
