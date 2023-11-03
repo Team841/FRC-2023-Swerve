@@ -5,7 +5,6 @@ import com.ctre.phoenix6.mechanisms.swerve.SwerveRequest;
 import com.team841.Swerve23.Constants.ConstantsIO;
 import com.team841.Swerve23.Constants.SubsystemManifest;
 import com.team841.Swerve23.Drive.Drivetrain;
-
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.geometry.Translation2d;
@@ -19,7 +18,8 @@ public class RobotContainer {
   final double MaxAngularRate = Math.PI; // Half a rotation per second max angular velocity
 
   /* Setting up bindings for necessary control of the swerve drive platform */
-  CommandPS4Controller joystick = new CommandPS4Controller(ConstantsIO.OI.driverPortLeft); // My joystick
+  CommandPS4Controller joystick =
+      new CommandPS4Controller(ConstantsIO.OI.driverPortLeft); // My joystick
   Drivetrain drivetrain = SubsystemManifest.drivetrain; // My drivetrain
   SwerveRequest.FieldCentric drive =
       new SwerveRequest.FieldCentric().withIsOpenLoop(true); // I want field-centric

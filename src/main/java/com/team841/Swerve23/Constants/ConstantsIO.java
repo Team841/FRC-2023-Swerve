@@ -43,6 +43,4 @@ public final class ConstantsIO {
     // Pigeon
     public static final int kPigeon = 0;
   }
-
-
 }
