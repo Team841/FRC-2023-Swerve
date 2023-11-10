@@ -42,5 +42,9 @@ public final class ConstantsIO {
 
     // Pigeon
     public static final int kPigeon = 0;
+
+    public static final int kArm = 1;
+    public static final int kIntakeOne = 2;
+    public static final int kIntakeTwo = 3;
   }
 }
