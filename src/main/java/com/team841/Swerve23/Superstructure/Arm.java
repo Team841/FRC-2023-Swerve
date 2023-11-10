@@ -1,22 +1,41 @@
 package com.team841.Swerve23.Superstructure;
 
 import com.revrobotics.CANSparkMax;
-import com.revrobotics.SparkMaxPIDController;
+import com.revrobotics.CANSparkMax.ControlType;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+import com.revrobotics.SparkMaxPIDController;
 import com.team841.Swerve23.Constants.ConstantsIO;
-
+import com.team841.Swerve23.Constants.SC;
+import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Arm extends SubsystemBase {
 
-  private final CANSparkMax armMotor = new CANSparkMax(ConstantsIO.CANID.kArm, MotorType.kBrushless);
+  private final CANSparkMax armMotor =
+      new CANSparkMax(ConstantsIO.CANID.kArm, MotorType.kBrushless);
 
   public SparkMaxPIDController armPID = armMotor.getPIDController();
 
-  public Arm() {}
+  public Arm() {
+    armMotor.restoreFactoryDefaults();
+
+    armMotor.setSmartCurrentLimit(SC.Arm.currentLimit);
+
+    armPID.setP(SC.Arm.pidGains.kP);
+    armPID.setI(SC.Arm.pidGains.kI);
+    armPID.setD(SC.Arm.pidGains.kD);
+    armPID.setIZone(SC.Arm.pidGains.kIz);
+
+    armPID.setFeedbackDevice(armMotor.getEncoder());
+  }
+
+  public Command armToPosition(double angle) {
+    return Commands.run(() -> armPID.setReference(angle, ControlType.kPosition))
+        .withInterruptBehavior(Command.InterruptionBehavior.kCancelSelf)
+        .handleInterrupt(() -> armMotor.set(0));
+  }
 
   @Override
-  public void periodic() {
-    // This method will be called once per scheduler run
-  }
+  public void periodic() {}
 }

@@ -1,7 +1,7 @@
 package com.team841.Swerve23;
 
 import com.team841.Swerve23.Constants.ConstantsIO;
-import com.team841.Swerve23.Constants.ConstantsIO.robotStates; 
+import com.team841.Swerve23.Constants.ConstantsIO.robotStates;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
