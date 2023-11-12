@@ -12,10 +12,15 @@ import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
+import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.button.CommandPS4Controller;
 // import edu.wpi.first.wpilibj2.command.button.Trigger;
 // import edu.wpi.first.wpilibj2.command.button.InstantCommand;
 // import edu.wpi.first.wpilibj2.command.button.RunCommand;
+
+
+
+
 
 public class RobotContainer {
 
@@ -37,8 +42,8 @@ public class RobotContainer {
 
   CommandPS4Controller coDriverJoystick =
       new CommandPS4Controller(ConstantsIO.OI.codriverPort); 
-      Arm arm = SubsystemManifest.arm;
-      Intake intake = SubsystemManifest.intake;
+  Arm arm = SubsystemManifest.arm;
+  Intake intake = SubsystemManifest.intake;
 
   private void configureBindings() {
     drivetrain.setDefaultCommand( // Drivetrain will execute this command periodically
@@ -70,10 +75,9 @@ public class RobotContainer {
   }
 
   private void configureCoBindings() {
-    // coDriverJoystick.cross().whileTrue(() ->Intake.Intake());
-    // final Trigger e = coDriverJoystick.cross();
-    // e.whileTrue(new InstantCommand(intake::intake, intake));
-
+   coDriverJoystick.cross().whileTrue(new InstantCommand(intake::intake, intake));
+   coDriverJoystick.circle().onTrue( new InstantCommand(intake::StopTake,intake));
+    coDriverJoystick.triangle().whileTrue(new InstantCommand(intake::outTake, intake));
   }
 
 
@@ -81,6 +85,7 @@ public class RobotContainer {
 
   public RobotContainer() {
     configureBindings();
+    configureCoBindings();
   }
 
   public Command getAutonomousCommand() {

@@ -59,13 +59,13 @@ public class Swerve {
   private static final int kFrontLeftDriveMotorId = 3;
   private static final int kFrontLeftSteerMotorId = 4;
   private static final int kFrontLeftEncoderId = 2;
-  private static final double kFrontLeftEncoderOffset = -0.604248046875;
+  private static final double kFrontLeftEncoderOffset = -0.1064453125;
 
   private static final double kFrontLeftXPosInches = 10.375;
   private static final double kFrontLeftYPosInches = 10.375;
   private static final int kFrontRightDriveMotorId = 1;
   private static final int kFrontRightSteerMotorId = 2;
-  private static final int kFrontRightEncoderId = 0;
+  private static final int kFrontRightEncoderId = 1;
   private static final double kFrontRightEncoderOffset = -0.4658203125;
 
 
@@ -74,7 +74,7 @@ public class Swerve {
   private static final int kBackLeftDriveMotorId = 5;
   private static final int kBackLeftSteerMotorId = 6;
   private static final int kBackLeftEncoderId = 3;
-  private static final double kBackLeftEncoderOffset = -0.4462890625;
+  private static final double kBackLeftEncoderOffset = -0.9345703125;
 
 
   private static final double kBackLeftXPosInches = -10.375;
