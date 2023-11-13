@@ -36,6 +36,22 @@ public class Arm extends SubsystemBase {
         .handleInterrupt(() -> armMotor.set(0));
   }
 
+  public void armOut(){
+    driveArm(1); 
+  }
+
+  public void armIn(){
+    driveArm(-1);
+  }
+
+  public void armStop(){
+    driveArm(0);
+  }
+
+  public void driveArm(double power){
+    armMotor.set(power);
+  }
+
   @Override
   public void periodic() {}
 }

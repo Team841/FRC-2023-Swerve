@@ -78,6 +78,14 @@ public class RobotContainer {
    coDriverJoystick.cross().whileTrue(new InstantCommand(intake::intake, intake));
    coDriverJoystick.circle().onTrue( new InstantCommand(intake::StopTake,intake));
     coDriverJoystick.triangle().whileTrue(new InstantCommand(intake::outTake, intake));
+
+    coDriverJoystick.L1().onTrue(new InstantCommand(arm::armOut, arm));
+    coDriverJoystick.L1().onFalse(new InstantCommand(arm::armStop, arm));
+
+    coDriverJoystick.R1().onTrue(new InstantCommand(arm::armIn, arm));
+    coDriverJoystick.R1().onFalse(new InstantCommand(arm::armStop, arm));
+
+
   }
 
 

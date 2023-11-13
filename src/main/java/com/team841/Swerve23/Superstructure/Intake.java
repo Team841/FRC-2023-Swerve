@@ -42,11 +42,11 @@ public class Intake extends SubsystemBase {
   }
 
   public void intake() {
-    setIntakeMotor(0.3);
+    setIntakeMotor(0.8);
   }
 
   public void outTake() {
-    setIntakeMotor(-0.3);
+    setIntakeMotor(-1.0);
     outTakeClock = 20;
   }
   
