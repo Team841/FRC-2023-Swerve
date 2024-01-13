@@ -46,5 +46,16 @@ public final class ConstantsIO {
     public static final int kArm = 1;
     public static final int kIntakeOne = 2;
     public static final int kIntakeTwo = 3;
+
+    // Intake sensor
+    public static final int Intake_Index_Sensor = 0;
+
+    //Arm sensor
+    public static final int Arm_Index_Sensor = 1;
+
+    //LED BLINKIN
+       public static final class PWMPorts {
+        public static final int kblinkin = 4;
   }
+}
 }
