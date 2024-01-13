@@ -28,20 +28,16 @@ public class RobotContainer {
   final double MaxAngularRate = Math.PI; // Half a rotation per second max angular velocity
 
   /* Setting up bindings for necessary control of the swerve drive platform */
-  CommandPS4Controller joystick =
-      new CommandPS4Controller(ConstantsIO.OI.driverPortLeft); // My joystick
+  CommandPS4Controller joystick = new CommandPS4Controller(ConstantsIO.OI.driverPortLeft); // My joystick
   Drivetrain drivetrain = SubsystemManifest.drivetrain; // My drivetrain
-  SwerveRequest.FieldCentric drive =
-      new SwerveRequest.FieldCentric().withIsOpenLoop(true); // I want field-centric
-  SwerveRequest.RobotCentric rdrive =
-      new SwerveRequest.RobotCentric().withIsOpenLoop(true);
+  SwerveRequest.FieldCentric drive = new SwerveRequest.FieldCentric().withIsOpenLoop(true); // I want field-centric
+  SwerveRequest.RobotCentric rdrive = new SwerveRequest.RobotCentric().withIsOpenLoop(true);
   // driving in open loop
   SwerveRequest.SwerveDriveBrake brake = new SwerveRequest.SwerveDriveBrake();
   SwerveRequest.PointWheelsAt point = new SwerveRequest.PointWheelsAt();
   Telemetry logger = new Telemetry(MaxSpeed);
 
-  CommandPS4Controller coDriverJoystick =
-      new CommandPS4Controller(ConstantsIO.OI.codriverPort); 
+  CommandPS4Controller coDriverJoystick = new CommandPS4Controller(ConstantsIO.OI.codriverPort); 
   Arm arm = SubsystemManifest.arm;
   Intake intake = SubsystemManifest.intake;
 
