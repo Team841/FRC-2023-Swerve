@@ -32,8 +32,8 @@ public class RobotContainer {
   SwerveRequest.FieldCentric drive = new SwerveRequest.FieldCentric().withIsOpenLoop(true); // I want field-centric
   SwerveRequest.RobotCentric rdrive = new SwerveRequest.RobotCentric().withIsOpenLoop(true);
   */
- SwerveRequest.FieldCentric drive = new SwerveRequest.FieldCentric().withDriveRequestType(DriveRequestType.OpenLoopVoltage);
- SwerveRequest.RobotCentric rdrive = new SwerveRequest.RobotCentric().withDriveRequestType(DriveRequestType.OpenLoopVoltage);
+  SwerveRequest.FieldCentric drive = new SwerveRequest.FieldCentric().withDriveRequestType(DriveRequestType.OpenLoopVoltage);
+  SwerveRequest.RobotCentric rdrive = new SwerveRequest.RobotCentric().withDriveRequestType(DriveRequestType.OpenLoopVoltage);
   // driving in open loop
   SwerveRequest.SwerveDriveBrake brake = new SwerveRequest.SwerveDriveBrake();
   SwerveRequest.PointWheelsAt point = new SwerveRequest.PointWheelsAt();
@@ -47,7 +47,7 @@ public class RobotContainer {
     drivetrain.setDefaultCommand( // Drivetrain will execute this command periodically
         drivetrain.applyRequest(
             () ->
-                rdrive
+                drive
                     .withVelocityX(-joystick.getLeftY() * MaxSpeed) // Drive forward with
                     // negative Y (forward)
                     .withVelocityY(
@@ -85,9 +85,6 @@ public class RobotContainer {
 
 
   }
-
-
-
 
   public RobotContainer() {
     configureBindings();

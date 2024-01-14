@@ -10,7 +10,7 @@ public final class ConstantsIO {
 
   public static robotStates robotCurrentState;
 
-  public static boolean inTune = false;
+  public static boolean inTune = true;
 
   public static class OI {
     public static final int driverPortLeft = 0; // controller USB port 0
