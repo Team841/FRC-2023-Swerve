@@ -4,8 +4,8 @@ import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import com.team841.Swerve23.Constants.ConstantsIO;
 import com.team841.Swerve23.Constants.SC;
-import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Intake extends SubsystemBase {
 
@@ -14,10 +14,10 @@ public class Intake extends SubsystemBase {
 
   private final CANSparkMax intakeTwoMotor =
       new CANSparkMax(ConstantsIO.CANID.kIntakeTwo, MotorType.kBrushless);
-  
-  private final DigitalInput Intake_Index_Sensor = new DigitalInput(0); 
 
-  private int outTakeClock = 0;    
+  private final DigitalInput Intake_Index_Sensor = new DigitalInput(0);
+
+  private int outTakeClock = 0;
 
   public Intake() {
 
@@ -49,24 +49,22 @@ public class Intake extends SubsystemBase {
     setIntakeMotor(-1.0);
     outTakeClock = 20;
   }
-  
+
   public void StopTake() {
     setIntakeMotor(0.0);
   }
 
-public boolean getSensor() {
-  return !Intake_Index_Sensor.get();
-  
-}
+  public boolean getSensor() {
+    return !Intake_Index_Sensor.get();
+  }
 
   @Override
   public void periodic() {
     if (outTakeClock == 0) {
-      if (getSensor()){
+      if (getSensor()) {
         StopTake();
       }
-    }
-    else {
+    } else {
       outTakeClock--;
     }
   }

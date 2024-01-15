@@ -1,8 +1,8 @@
 package com.team841.Swerve23.Superstructure;
 
+import com.revrobotics.CANSparkBase.ControlType;
 import com.revrobotics.CANSparkMax;
 // import com.revrobotics.CANSparkMax.ControlType;
-import com.revrobotics.CANSparkBase.ControlType;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import com.revrobotics.SparkMaxPIDController;
 import com.team841.Swerve23.Constants.ConstantsIO;
@@ -37,19 +37,19 @@ public class Arm extends SubsystemBase {
         .handleInterrupt(() -> armMotor.set(0));
   }
 
-  public void armOut(){
-    driveArm(1); 
+  public void armOut() {
+    driveArm(1);
   }
 
-  public void armIn(){
+  public void armIn() {
     driveArm(-1);
   }
 
-  public void armStop(){
+  public void armStop() {
     driveArm(0);
   }
 
-  public void driveArm(double power){
+  public void driveArm(double power) {
     armMotor.set(power);
   }
 

@@ -50,12 +50,12 @@ public final class ConstantsIO {
     // Intake sensor
     public static final int Intake_Index_Sensor = 0;
 
-    //Arm sensor
+    // Arm sensor
     public static final int Arm_Index_Sensor = 1;
 
-    //LED BLINKIN
-       public static final class PWMPorts {
-        public static final int kblinkin = 4;
+    // LED BLINKIN
+    public static final class PWMPorts {
+      public static final int kblinkin = 4;
+    }
   }
-}
 }

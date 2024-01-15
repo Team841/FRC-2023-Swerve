@@ -1,8 +1,8 @@
 package com.team841.Swerve23;
 
 import com.ctre.phoenix6.Utils;
-import com.ctre.phoenix6.mechanisms.swerve.SwerveRequest;
 import com.ctre.phoenix6.mechanisms.swerve.SwerveModule.DriveRequestType;
+import com.ctre.phoenix6.mechanisms.swerve.SwerveRequest;
 import com.team841.Swerve23.Constants.ConstantsIO;
 import com.team841.Swerve23.Constants.SubsystemManifest;
 import com.team841.Swerve23.Drive.Drivetrain;
@@ -15,10 +15,6 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.button.CommandPS4Controller;
-// import edu.wpi.first.wpilibj2.command.button.Trigger;
-// import edu.wpi.first.wpilibj2.command.button.InstantCommand;
-// import edu.wpi.first.wpilibj2.command.button.RunCommand;
-
 
 public class RobotContainer {
 
@@ -26,20 +22,23 @@ public class RobotContainer {
   final double MaxAngularRate = Math.PI; // Half a rotation per second max angular velocity
 
   /* Setting up bindings for necessary control of the swerve drive platform */
-  CommandPS4Controller joystick = new CommandPS4Controller(ConstantsIO.OI.driverPortLeft); // My joystick
+  CommandPS4Controller joystick =
+      new CommandPS4Controller(ConstantsIO.OI.driverPortLeft); // My joystick
   Drivetrain drivetrain = SubsystemManifest.drivetrain; // My drivetrain
   /*
   SwerveRequest.FieldCentric drive = new SwerveRequest.FieldCentric().withIsOpenLoop(true); // I want field-centric
   SwerveRequest.RobotCentric rdrive = new SwerveRequest.RobotCentric().withIsOpenLoop(true);
   */
-  SwerveRequest.FieldCentric drive = new SwerveRequest.FieldCentric().withDriveRequestType(DriveRequestType.OpenLoopVoltage);
-  SwerveRequest.RobotCentric rdrive = new SwerveRequest.RobotCentric().withDriveRequestType(DriveRequestType.OpenLoopVoltage);
+  SwerveRequest.FieldCentric drive =
+      new SwerveRequest.FieldCentric().withDriveRequestType(DriveRequestType.OpenLoopVoltage);
+  SwerveRequest.RobotCentric rdrive =
+      new SwerveRequest.RobotCentric().withDriveRequestType(DriveRequestType.OpenLoopVoltage);
   // driving in open loop
   SwerveRequest.SwerveDriveBrake brake = new SwerveRequest.SwerveDriveBrake();
   SwerveRequest.PointWheelsAt point = new SwerveRequest.PointWheelsAt();
   Telemetry logger = new Telemetry(MaxSpeed);
 
-  CommandPS4Controller coDriverJoystick = new CommandPS4Controller(ConstantsIO.OI.codriverPort); 
+  CommandPS4Controller coDriverJoystick = new CommandPS4Controller(ConstantsIO.OI.codriverPort);
   Arm arm = SubsystemManifest.arm;
   Intake intake = SubsystemManifest.intake;
 
@@ -73,8 +72,8 @@ public class RobotContainer {
   }
 
   private void configureCoBindings() {
-   coDriverJoystick.cross().whileTrue(new InstantCommand(intake::intake, intake));
-   coDriverJoystick.circle().onTrue( new InstantCommand(intake::StopTake,intake));
+    coDriverJoystick.cross().whileTrue(new InstantCommand(intake::intake, intake));
+    coDriverJoystick.circle().onTrue(new InstantCommand(intake::StopTake, intake));
     coDriverJoystick.triangle().whileTrue(new InstantCommand(intake::outTake, intake));
 
     coDriverJoystick.L1().onTrue(new InstantCommand(arm::armOut, arm));
@@ -82,8 +81,6 @@ public class RobotContainer {
 
     coDriverJoystick.R1().onTrue(new InstantCommand(arm::armIn, arm));
     coDriverJoystick.R1().onFalse(new InstantCommand(arm::armStop, arm));
-
-
   }
 
   public RobotContainer() {
