@@ -21,7 +21,7 @@ public final class ConstantsIO {
   public static final class CANID {
 
     // Swerve falcons
-    public static final int kFrontRightDriveFalcon = 0;
+    /*public static final int kFrontRightDriveFalcon = 0;
     public static final int kFrontRightTurnFalcon = 0;
     public static final int kFrontLeftDriveFalcon = 0;
     public static final int kFrontLeftTurnFalcon = 0;
@@ -29,16 +29,16 @@ public final class ConstantsIO {
     public static final int kBackRightTurnFalcon = 0;
     public static final int kBackRightDriveFalcon = 0;
     public static final int kBackLeftDriveFalcon = 0;
-    public static final int kBackLeftTurnFalcon = 0;
+    public static final int kBackLeftTurnFalcon = 0; */
 
     // Canivore
     public static final int kCanivore = 0;
 
     // Cancoder
-    public static final int kFrontRightCancoder = 0;
+    /*public static final int kFrontRightCancoder = 0;
     public static final int kFrontLeftCancoder = 0;
     public static final int kBackRightCancoder = 0;
-    public static final int kBackLeftCancoder = 0;
+    public static final int kBackLeftCancoder = 0;*/
 
     // Pigeon
     public static final int kPigeon = 0;
@@ -46,6 +46,16 @@ public final class ConstantsIO {
     public static final int kArm = 1;
     public static final int kIntakeOne = 2;
     public static final int kIntakeTwo = 3;
+    /*public static final int kKickerOne = 4;
+    public static final int kKickerTwo = 5;
+    public static final int kShooterOne = 6;
+    public static  final int kShooterTwo = 7;
+    /* */
+  }
+
+    public static final class PWMPorts {
+    // LED BLINKIN
+      public static final int kblinkin = 4;
 
     // Intake sensor
     public static final int Intake_Index_Sensor = 0;
@@ -53,9 +63,7 @@ public final class ConstantsIO {
     // Arm sensor
     public static final int Arm_Index_Sensor = 1;
 
-    // LED BLINKIN
-    public static final class PWMPorts {
-      public static final int kblinkin = 4;
+    /*// Kicker sensor
+    public static final int Kicker_Index_Sensor = 5;/* */
     }
-  }
 }

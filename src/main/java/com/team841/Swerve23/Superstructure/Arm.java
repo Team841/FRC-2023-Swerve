@@ -3,7 +3,7 @@ package com.team841.Swerve23.Superstructure;
 import com.revrobotics.CANSparkBase.ControlType;
 import com.revrobotics.CANSparkMax;
 // import com.revrobotics.CANSparkMax.ControlType;
-import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+import com.revrobotics.CANSparkLowLevel.MotorType;
 import com.revrobotics.SparkMaxPIDController;
 import com.team841.Swerve23.Constants.ConstantsIO;
 import com.team841.Swerve23.Constants.SC;

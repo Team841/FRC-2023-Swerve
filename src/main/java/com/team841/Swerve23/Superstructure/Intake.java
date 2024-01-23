@@ -1,7 +1,7 @@
 package com.team841.Swerve23.Superstructure;
 
 import com.revrobotics.CANSparkMax;
-import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+import com.revrobotics.CANSparkLowLevel.MotorType;
 import com.team841.Swerve23.Constants.ConstantsIO;
 import com.team841.Swerve23.Constants.SC;
 import edu.wpi.first.wpilibj.DigitalInput;

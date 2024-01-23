@@ -8,6 +8,8 @@ import com.team841.Swerve23.Constants.SubsystemManifest;
 import com.team841.Swerve23.Drive.Drivetrain;
 import com.team841.Swerve23.Superstructure.Arm;
 import com.team841.Swerve23.Superstructure.Intake;
+import com.team841.Swerve23.Superstructure.intakeCommand;
+
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.geometry.Translation2d;
@@ -72,9 +74,11 @@ public class RobotContainer {
   }
 
   private void configureCoBindings() {
-    coDriverJoystick.cross().whileTrue(new InstantCommand(intake::intake, intake));
+    /*coDriverJoystick.cross().onTrue(new InstantCommand(intake::intake, intake));
     coDriverJoystick.circle().onTrue(new InstantCommand(intake::StopTake, intake));
     coDriverJoystick.triangle().whileTrue(new InstantCommand(intake::outTake, intake));
+*/
+    coDriverJoystick.circle().onTrue(new intakeCommand(intake));
 
     coDriverJoystick.L1().onTrue(new InstantCommand(arm::armOut, arm));
     coDriverJoystick.L1().onFalse(new InstantCommand(arm::armStop, arm));
