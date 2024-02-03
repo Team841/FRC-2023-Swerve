@@ -80,7 +80,7 @@ public class Drivetrain extends SwerveDrivetrain implements Subsystem {
                 SC.Swerve.brModuleOffset);
         odometry = new SwerveDriveOdometry(kinematics, gyro.getRotation2d(), getPositions());
 
-        double driveBaseRadius = 0;
+        double driveBaseRadius = 0.3302;
         for (var moduleLocation : m_moduleLocations) {
             driveBaseRadius = Math.max(driveBaseRadius, moduleLocation.getNorm());
         }

@@ -1,0 +1,32 @@
+{
+  "version": 1.0,
+  "startingPose": null,
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "sequential",
+          "data": {
+            "commands": [
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "Red right to Safe Zone Infield Note"
+                }
+              },
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "Red Safe Zone Infield to Middle Infield"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "folder": null,
+  "choreoAuto": false
+}
