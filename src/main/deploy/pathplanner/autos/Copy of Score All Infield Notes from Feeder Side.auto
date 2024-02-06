@@ -1,6 +1,12 @@
 {
   "version": 1.0,
-  "startingPose": null,
+  "startingPose": {
+    "position": {
+      "x": 14.7,
+      "y": 3.06
+    },
+    "rotation": 0.0
+  },
   "command": {
     "type": "sequential",
     "data": {
@@ -13,12 +19,6 @@
                 "type": "path",
                 "data": {
                   "pathName": "Red right to Safe Zone Infield Note"
-                }
-              },
-              {
-                "type": "path",
-                "data": {
-                  "pathName": "Red Safe Zone Infield to Middle Infield"
                 }
               }
             ]

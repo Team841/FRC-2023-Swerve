@@ -91,6 +91,8 @@ public class Telemetry {
     fieldTypePub.set("Field2d");
     fieldPub.set(new double[] {pose.getX(), pose.getY(), pose.getRotation().getDegrees()});
 
+    SmartDashboard.putNumberArray("odometry", new double[]{pose.getX(), pose.getY(), pose.getRotation().getDegrees()});
+
     /* Telemeterize the robot's general speeds */
     double currentTime = Utils.getCurrentTimeSeconds();
     double diffTime = currentTime - lastTime;
@@ -114,4 +116,5 @@ public class Telemetry {
       SmartDashboard.putData("Module " + i, m_moduleMechanisms[i]);
     }
   }
+
 }

@@ -80,7 +80,7 @@ public class Drivetrain extends SwerveDrivetrain implements Subsystem {
                 SC.Swerve.brModuleOffset);
         odometry = new SwerveDriveOdometry(kinematics, gyro.getRotation2d(), getPositions());
 
-        double driveBaseRadius = 0.3302;
+        double driveBaseRadius = 0;
         for (var moduleLocation : m_moduleLocations) {
             driveBaseRadius = Math.max(driveBaseRadius, moduleLocation.getNorm());
         }
@@ -222,9 +222,12 @@ public class Drivetrain extends SwerveDrivetrain implements Subsystem {
           currentRotation = currentRotation.plus(new Rotation2d(angularVelRps * 0.02));
       }
   }
-    //public void periodic(){
+    public void periodic(){
        // double yaw;
        // yaw = pidgey.getAngle();
        // SmartDashboard.putNumber("YawinDegrees", yaw);
+
+       //this.getState(); // Supplier of current robot pose
     }
+}
 
